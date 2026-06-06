@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Velox by ProLytix Solutions — On-premise referral intelligence for specialist practices and primary care. Epic-compatible, guideline-driven, no cloud.">
+  <title>Velox — Referral Intelligence · ProLytix Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B3D2E'/%3E%3Cline x1='16' y1='3' x2='16' y2='29' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='3' y1='16' x2='29' y2='16' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='5' stroke='%23E8A030' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23E8A030'/%3E%3C/svg%3E">
+  <style>
+    /* Velox-specific overrides */
+    .iq-row-live td { border-left: 2px solid rgba(26,107,90,.5); }
+    .trace-box {
+      background: rgba(232,160,48,.04);
+      border: 1px solid rgba(232,160,48,.14);
+      border-left: 3px solid var(--amber);
+      padding: 24px 28px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(242,237,228,.6);
+      font-weight: 300;
+      font-family: 'DM Mono', 'Courier New', monospace;
+      margin-top: 16px;
+    }
+    .trace-box strong {
+      color: var(--amber);
+      font-weight: 600;
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      letter-spacing: .1em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(232,160,48,.1);
+      margin-top: 48px;
+    }
+    .feature-strip-item {
+      background: rgba(11,61,46,.25);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .feature-strip-item svg { margin: 0 auto 12px; display: block; }
+    .feature-strip-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(242,237,228,.55);
+    }
+    @media (max-width: 900px) {
+      .feature-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .feature-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="page-body">
+
+<!-- ════════════════════════════════════════ -->
+<!-- NAV -->
+<!-- ════════════════════════════════════════ -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="36" height="36" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="34" fill="#0B3D2E"/>
+        <line x1="40" y1="10" x2="40" y2="70" stroke="#E8A030" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="10" y1="40" x2="70" y2="40" stroke="#E8A030" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="10" stroke="#E8A030" stroke-width="2.5" fill="none"/>
+        <circle cx="40" cy="40" r="3.5" fill="#E8A030"/>
+        <circle cx="55" cy="25" r="2.5" fill="#E8A030" opacity=".65"/>
+        <circle cx="25" cy="25" r="2.5" fill="#E8A030" opacity=".65"/>
+        <circle cx="55" cy="55" r="2.5" fill="#E8A030" opacity=".65"/>
+        <circle cx="25" cy="55" r="2.5" fill="#E8A030" opacity=".65"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">ProLytix Solutions</span>
+      <span class="nav-logo-sub">Clinical Intelligence</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#platform">Platform</a></li>
+    <li><a href="velox.html" class="active">Velox</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Request Demo</a></li>
+  </ul>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#platform">Platform</a>
+  <a href="velox.html">Velox</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact" class="drawer-cta">Request Demo</a>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- VELOX HERO -->
+<!-- ════════════════════════════════════════ -->
+<section class="velox-hero">
+  <div class="velox-hero-bg"></div>
+  <div class="velox-hero-grid"></div>
+
+  <!-- Oversized background hexagon mark -->
+  <div class="velox-hero-mark" aria-hidden="true">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#E8A030" opacity=".08"/>
+      <polyline points="20,40 27,40 31,24 36,56 41,30 46,40 60,40" stroke="#E8A030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".15"/>
+    </svg>
+  </div>
+
+  <div class="velox-hero-content">
+    <div class="velox-hero-tagline">ProLytix Solutions · Clinical Integration Shell</div>
+    <h1 class="velox-hero-title">Velox</h1>
+    <div class="velox-hero-sub">Guideline intelligence for the moments that matter most.</div>
+    <p class="velox-hero-body">
+      An on-premise referral intelligence system that reads your EHR, scores patients against clinical guidelines, and tells the right person the right thing — before anyone opens a chart, before anyone writes a referral, before a wasted specialist visit.
+    </p>
+    <div class="hero-actions">
+      <a href="index.html#contact" class="btn-primary">Request Alpha Access</a>
+      <a href="#use-cases" class="btn-ghost">See the four use cases</a>
+    </div>
+  </div>
+
+  <!-- Feature strip inside hero -->
+  <div class="feature-strip" style="margin-top:64px; position:relative; z-index:2;">
+    <div class="feature-strip-item">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#1A6B5A"/>
+        <polyline points="20,40 27,40 31,24 36,56 41,30 46,40 60,40" stroke="#E8A030" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="feature-strip-label">PathwayIQ</div>
+    </div>
+    <div class="feature-strip-item">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#2E5A9E"/>
+        <circle cx="40" cy="40" r="14" stroke="#E8A030" stroke-width="3.5" fill="none"/>
+        <circle cx="40" cy="40" r="8" stroke="#E8A030" stroke-width="2.5" fill="none" opacity=".6"/>
+        <circle cx="40" cy="40" r="3" fill="#E8A030"/>
+        <line x1="50" y1="30" x2="57" y2="23" stroke="#E8A030" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div class="feature-strip-label">ScanIQ</div>
+    </div>
+    <div class="feature-strip-item">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#7A3E8E"/>
+        <ellipse cx="40" cy="40" rx="16" ry="10" stroke="#E8A030" stroke-width="3.5" fill="none"/>
+        <circle cx="40" cy="40" r="5" fill="#E8A030"/>
+        <circle cx="40" cy="40" r="2.5" fill="#7A3E8E"/>
+      </svg>
+      <div class="feature-strip-label">WatchIQ</div>
+    </div>
+    <div class="feature-strip-item">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="34" fill="#0B3D2E"/>
+        <line x1="40" y1="10" x2="40" y2="70" stroke="#E8A030" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+        <line x1="10" y1="40" x2="70" y2="40" stroke="#E8A030" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+        <circle cx="40" cy="40" r="10" stroke="#E8A030" stroke-width="3" fill="none"/>
+        <circle cx="40" cy="40" r="4" fill="#E8A030"/>
+      </svg>
+      <div class="feature-strip-label">Arcos Engine</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- WHAT VELOX DOES -->
+<!-- ════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="two-col-narrow">
+    <div>
+      <div class="section-label">The Problem</div>
+      <h2 class="section-headline">The referral is written.<br><em>The damage is already done.</em></h2>
+      <p class="section-body">
+        By the time a specialist sees a referral, the wrong workup has already been ordered, the wrong priority assigned, and three weeks have passed. Velox moves the intelligence earlier — before the referral, before the visit, before the wasted appointment.
+      </p>
+      <p class="section-body" style="margin-top:20px;">
+        Powered by the Arcos orchestration framework, Velox reads existing chart data through FHIR R4, scores against current clinical guidelines, and surfaces the signal in plain language — for the MA, the PCP, and the specialist.
+      </p>
+    </div>
+    <div>
+      <div class="trace-box">
+        <strong>Example Scoring Trace — MASLD Pathway (AGA 2026)</strong>
+        Patient: 58F · BMI 32.4 · ALT 67 · AST 44 · PLT 188<br><br>
+        Step 1: FIB-4 calculable from existing labs → FIB-4 = 1.48<br>
+        Step 2: FIB-4 ≥ 1.3 → Indeterminate zone. AGA guideline requires confirmatory elastography.<br>
+        Step 3: Elastography not on file → <span style="color:#E8A030;">Missing order flagged.</span><br>
+        Step 4: Guideline recommendation: Refer to Hepatology with elastography result in hand.<br><br>
+        <span style="color:rgba(232,160,48,.6); font-size:11px;">Priority: High · Missing orders: 1 · Confidence: Guideline-match</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- FOUR USE CASES -->
+<!-- ════════════════════════════════════════ -->
+<section class="section section-pale" id="use-cases">
+  <div class="section-label">Four Use Cases</div>
+  <h2 class="section-headline">One system. Four moments<br>where it <em>changes the outcome.</em></h2>
+
+  <div class="usecase-grid">
+
+    <div class="usecase">
+      <div class="usecase-number">01</div>
+      <div class="usecase-title">Specialist MA — Incoming Referral Triage</div>
+      <p class="usecase-body">
+        Velox reads the incoming referral packet from the EHR, scores the patient against the specialist's guideline, assigns scheduling priority, and surfaces every missing order — before the physician ever opens the chart. The MA knows who to call today.
+      </p>
+    </div>
+
+    <div class="usecase">
+      <div class="usecase-number">02</div>
+      <div class="usecase-title">PCP Pre-Referral — Before Writing the Order</div>
+      <p class="usecase-body">
+        Before the PCP writes the referral, Velox shows exactly what the specialist will need. If FIB-4 can be calculated from existing labs, it is. Orders placed today. Not after a wasted specialist visit that costs the patient six weeks and the health system a prior auth fight.
+      </p>
+    </div>
+
+    <div class="usecase">
+      <div class="usecase-number">03</div>
+      <div class="usecase-title">PCP Mid-Visit — Patient Is In the Room</div>
+      <p class="usecase-body">
+        ScanIQ scans the existing chart for guideline risk signals without requiring an ICD code. It surfaces conditions the patient hasn't been evaluated for while they're still in the exam room — when something can actually be done about it.
+      </p>
+    </div>
+
+    <div class="usecase">
+      <div class="usecase-number">04</div>
+      <div class="usecase-title">PCP Managing — When No Referral Is Needed</div>
+      <p class="usecase-body">
+        Low-risk patient. Guideline endorses primary care management. Velox delivers a specific plan: what to prescribe, when to recheck, what labs to order, and exactly what number would change the answer to "refer now" — giving the PCP confidence to hold the case appropriately.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- IQ MODULE TABLE -->
+<!-- ════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-label">The IQ Suite</div>
+  <h2 class="section-headline">Discrete modules.<br><em>One container.</em></h2>
+  <p class="section-body">
+    Each IQ module is licensed independently and bundled into Velox. The hexagon is the constant — the interior glyph and function changes per module. New specialties, new evidence, same architecture.
+  </p>
+
+  <table class="iq-table">
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Function</th>
+        <th>Primary User</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="iq-row-live">
+        <td>PathwayIQ</td>
+        <td>Clinical pathway evaluation + validation against current guidelines. Scores patient, identifies gaps, explains reasoning step by step.</td>
+        <td>Specialist MA, PCP</td>
+        <td><span class="iq-badge badge-live">Live in Velox</span></td>
+      </tr>
+      <tr class="iq-row-live">
+        <td>ScanIQ</td>
+        <td>Multi-pathway scanner for existing chart data. No ICD code required. Surfaces risk signals the PCP hasn't looked for yet.</td>
+        <td>PCP (mid-visit)</td>
+        <td><span class="iq-badge badge-live">Live in Velox</span></td>
+      </tr>
+      <tr class="iq-row-live">
+        <td>WatchIQ</td>
+        <td>Patient navigation and watchlist. Tracks who needs follow-up, what threshold would trigger a change, and when to recheck.</td>
+        <td>Care coordinators, PCP</td>
+        <td><span class="iq-badge badge-live">Live in Velox</span></td>
+      </tr>
+      <tr>
+        <td>AuthIQ</td>
+        <td>Prior authorization criteria matching. Maps clinical documentation to payer criteria before submission. Reduces denials upstream.</td>
+        <td>Billing, front office</td>
+        <td><span class="iq-badge badge-future">Future</span></td>
+      </tr>
+      <tr>
+        <td>CodeIQ</td>
+        <td>Coding suggestion downstream of the clinical encounter. Informed by the pathway trace already generated during the visit.</td>
+        <td>Coders, billing</td>
+        <td><span class="iq-badge badge-future">Future</span></td>
+      </tr>
+      <tr>
+        <td>NoteIQ</td>
+        <td>Note intelligence layer. Reads completed notes after transcription — downstream of DAX, Freed, Deepgram, or any existing scribe tool.</td>
+        <td>Physicians</td>
+        <td><span class="iq-badge badge-future">Future</span></td>
+      </tr>
+      <tr>
+        <td>PlanIQ</td>
+        <td>IEP management for special education. Same on-premise architecture, entirely different vertical.</td>
+        <td>Special ed coordinators</td>
+        <td><span class="iq-badge badge-future">Education Shell</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- ARCHITECTURE -->
+<!-- ════════════════════════════════════════ -->
+<section class="section section-forest">
+  <div class="section-label">Architecture</div>
+  <div class="two-col">
+    <div>
+      <h2 class="section-headline">No cloud.<br>No PHI in transit.<br><em>No exceptions.</em></h2>
+      <p class="section-body">
+        Velox runs on a dedicated Rocky Linux edge device installed inside your facility. The device connects to your Epic instance via FHIR R4, reads what it needs, runs the scoring logic locally, and returns the result — all without a single byte of protected health information leaving the building.
+      </p>
+      <p class="section-body" style="margin-top:16px;">
+        Full function with no internet required. HIPAA-safe by architecture, not by policy.
+      </p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="arch-panel">
+        <div class="arch-panel-title">Technical Specs</div>
+        <ul class="arch-list">
+          <li>Rocky Linux on-premise edge device</li>
+          <li>FHIR R4 — Epic App Orchard or local IT registration</li>
+          <li>No cloud dependency · No internet required for core function</li>
+          <li>Arcos orchestration framework (internal, not customer-facing)</li>
+          <li>Clinic-configurable via clinic_overrides.yaml + Preferences UI</li>
+          <li>Target deployment: 90 days from agreement</li>
+        </ul>
+      </div>
+      <div class="arch-panel">
+        <div class="arch-panel-title">Differentiators</div>
+        <ul class="arch-list">
+          <li>The trace — every decision in plain language, every step named</li>
+          <li>Deterministic, not probabilistic — no black-box AI outputs</li>
+          <li>Epic-compatible from day one (FHIR R4)</li>
+          <li>21st Century Cures Act CDS exemption — no FDA clearance path required</li>
+          <li>Not a scribe, not a transcription tool — intelligence downstream of those layers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- ALPHA PROGRAM -->
+<!-- ════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-label">Alpha Program</div>
+  <div class="two-col">
+    <div>
+      <h2 class="section-headline">The alpha ask<br>is <em>two cases.</em></h2>
+      <p class="section-body">
+        Look at the scoring trace on two de-identified patients. Tell us whether the scoring matches your clinical reasoning. That is the entire ask at alpha.
+      </p>
+      <p class="section-body" style="margin-top:16px;">
+        We're looking for physicians with genuine curiosity — people who've felt the problem in their own schedule, who'll interrupt the demo to say "we had a patient like that last month" and ask "can I change that threshold?"
+      </p>
+      <div style="margin-top:40px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <span style="color:var(--amber); font-size:18px; margin-top:2px;">◆</span>
+          <div>
+            <div style="font-family:'Syne',sans-serif; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#F2EDE4; margin-bottom:4px;">Clinical Credibility</div>
+            <div style="font-size:13px; color:rgba(242,237,228,.5); font-weight:300; line-height:1.65;">When they say the logic is right, it means something. Board certification and active clinical practice required.</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <span style="color:var(--amber); font-size:18px; margin-top:2px;">◆</span>
+          <div>
+            <div style="font-family:'Syne',sans-serif; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#F2EDE4; margin-bottom:4px;">Genuine Curiosity</div>
+            <div style="font-size:13px; color:rgba(242,237,228,.5); font-weight:300; line-height:1.65;">They've felt this problem in their own schedule. They're not evaluating a vendor — they're looking for something that works.</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <span style="color:var(--amber); font-size:18px; margin-top:2px;">◆</span>
+          <div>
+            <div style="font-family:'Syne',sans-serif; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#F2EDE4; margin-bottom:4px;">Willingness to Engage</div>
+            <div style="font-size:13px; color:rgba(242,237,228,.5); font-weight:300; line-height:1.65;">Examine the trace. Give feedback. Tell us what the guideline actually says versus what we scored.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div class="arch-panel">
+        <div class="arch-panel-title">Anchor Site</div>
+        <ul class="arch-list">
+          <li>Terrebonne General Medical Center · Houma, Louisiana</li>
+          <li>321-bed regional medical center · Epic EHR</li>
+          <li>Alpha partner: Dr. Ugo Ezema, MD · Pulmonology + Critical Care</li>
+          <li>Board-certified · Active at Ochsner Health + Terrebonne General</li>
+        </ul>
+      </div>
+      <div class="arch-panel">
+        <div class="arch-panel-title">Primary Clinical Examples</div>
+        <ul class="arch-list">
+          <li>MASLD (Metabolic-Associated Steatotic Liver Disease) — AGA 2026 guidelines</li>
+          <li>COPD — GOLD 2026 guidelines</li>
+          <li>FIB-4 calculation from existing labs (real-time, no additional orders)</li>
+          <li>Pulmonary function threshold triggers for Pulmonology referral</li>
+        </ul>
+      </div>
+      <a href="index.html#contact" class="btn-primary" style="text-align:center; display:block; padding:16px;">Apply for Alpha Access</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- CTA BAND -->
+<!-- ════════════════════════════════════════ -->
+<div class="cta-band">
+  <div>
+    <div class="cta-band-text">See the trace on a real case.<br>No commitment. Thirty minutes.</div>
+    <p style="font-size:14px; color:rgba(15,26,20,.6); margin-top:8px; font-weight:300;">Two de-identified patients. Your clinical judgment. Our scoring. Let's find out if they match.</p>
+  </div>
+  <a href="index.html#contact" class="btn-dark">Book a Demo</a>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="32" height="32" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="34" fill="#0B3D2E"/>
+          <line x1="40" y1="10" x2="40" y2="70" stroke="#E8A030" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="10" y1="40" x2="70" y2="40" stroke="#E8A030" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="40" r="10" stroke="#E8A030" stroke-width="2.5" fill="none"/>
+          <circle cx="40" cy="40" r="3.5" fill="#E8A030"/>
+        </svg>
+      </div>
+      <div class="footer-brand-name">ProLytix Solutions</div>
+      <p class="footer-brand-tagline">Clinical intelligence software for the moments that matter most. On-premise, Epic-compatible, guideline-driven.</p>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Velox</div>
+      <ul class="footer-links">
+        <li><a href="#use-cases">Four Use Cases</a></li>
+        <li><a href="#iq-suite">IQ Suite Modules</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#alpha">Alpha Program</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">ProLytix</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="mailto:hello@prolytixsolutions.com">hello@prolytixsolutions.com</a></li>
+        <li><a href="https://github.com/ProLytix-Solutions" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 ProLytix Solutions LLC · Louisiana · All rights reserved</span>
+    <span class="footer-copy">prolytixsolutions.com</span>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('drawer');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
