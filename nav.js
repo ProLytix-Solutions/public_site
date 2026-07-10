@@ -4,6 +4,8 @@
 
 (function () {
   const page = window.location.pathname.split('/').pop() || 'index.html';
+  const solutionPages = ['healthcare.html', 'velox.html', 'government.html', 'education.html', 'custom-solutions.html'];
+  const onSolutions = solutionPages.includes(page);
 
   const nav = `
 <nav class="nav">
@@ -23,16 +25,23 @@
     </div>
     <div class="nav-logo-text">
       <span class="nav-logo-name">ProLytix Solutions</span>
-      <span class="nav-logo-sub">Clinical Intelligence</span>
+      <span class="nav-logo-sub">Applied Intelligence</span>
     </div>
   </a>
 
   <ul class="nav-links">
     <li><a href="index.html" ${page === 'index.html' || page === '' ? 'class="active"' : ''}>Home</a></li>
-    <li><a href="index.html#platform">Platform</a></li>
-    <li><a href="velox.html" ${page === 'velox.html' ? 'class="active"' : ''}>Velox</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Request Demo</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#solutions" ${onSolutions ? 'class="active"' : ''}>Solutions ▾</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="healthcare.html">Healthcare</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="custom-solutions.html">Custom Solutions</a></li>
+      </ul>
+    </li>
+    <li><a href="careers.html" ${page === 'careers.html' ? 'class="active"' : ''}>Careers</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
   </ul>
 
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -42,10 +51,13 @@
 
 <div class="nav-drawer" id="drawer">
   <a href="index.html">Home</a>
-  <a href="index.html#platform">Platform</a>
-  <a href="velox.html">Velox</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#contact" class="drawer-cta">Request Demo</a>
+  <a href="healthcare.html">Healthcare</a>
+  <a href="velox.html" style="padding-left:24px; font-size:12px;">— Velox</a>
+  <a href="government.html">Government</a>
+  <a href="education.html">Education</a>
+  <a href="custom-solutions.html">Custom Solutions</a>
+  <a href="careers.html">Careers</a>
+  <a href="index.html#contact" class="drawer-cta">Contact Us</a>
 </div>`;
 
   // Write nav before the page body content

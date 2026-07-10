@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Velox by ProLytix Solutions — On-premise referral intelligence for specialist practices and primary care. Epic-compatible, guideline-driven, no cloud.">
-  <title>Velox — Referral Intelligence · ProLytix Solutions</title>
+  <meta name="description" content="Velox by ProLytix Solutions — On-premise referral and pathway intelligence for specialist practices and primary care. EHR-compatible via FHIR R4, guideline-driven, no cloud.">
+  <title>Velox — Guideline Intelligence for Referrals · ProLytix Solutions</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B3D2E'/%3E%3Cline x1='16' y1='3' x2='16' y2='29' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='3' y1='16' x2='29' y2='16' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='5' stroke='%23E8A030' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23E8A030'/%3E%3C/svg%3E">
-  <!-- Google Search Console — replace content value with your verification code -->
   <meta name="google-site-verification" content="PASTE_YOUR_VERIFICATION_CODE_HERE">
   <style>
     /* Velox-specific overrides */
@@ -108,11 +107,11 @@
   </div>
 
   <div class="velox-hero-content">
-    <div class="velox-hero-tagline">ProLytix Solutions · Clinical Integration Shell</div>
+    <div class="velox-hero-tagline">ProLytix Solutions · Healthcare · Clinical Integration Shell</div>
     <h1 class="velox-hero-title">Velox</h1>
     <div class="velox-hero-sub">Guideline intelligence for the moments that matter most.</div>
     <p class="velox-hero-body">
-      An on-premise referral intelligence system that reads your EHR, scores patients against clinical guidelines, and tells the right person the right thing — before anyone opens a chart, before anyone writes a referral, before a wasted specialist visit.
+      An on-premise referral intelligence system that reads your EHR, scores patients against clinical guidelines, and surfaces the right information to the right person — before anyone opens a chart, before anyone writes a referral, before a wasted specialist visit.
     </p>
     <div class="hero-actions">
       <a href="index.html#contact" class="btn-primary">Request Alpha Access</a>
@@ -171,10 +170,10 @@
       <div class="section-label">The Problem</div>
       <h2 class="section-headline">The referral is written.<br><em>The damage is already done.</em></h2>
       <p class="section-body">
-        By the time a specialist sees a referral, the wrong workup has already been ordered, the wrong priority assigned, and three weeks have passed. Velox moves the intelligence earlier — before the referral, before the visit, before the wasted appointment.
+        By the time a specialist sees a referral, the wrong workup has often already been ordered, the wrong priority assigned, and weeks have passed. Velox moves the intelligence earlier — before the referral, before the visit, before the wasted appointment.
       </p>
       <p class="section-body" style="margin-top:20px;">
-        Powered by <strong style="color:var(--amber); font-weight:600;">Arcos</strong> — ProLytix's proprietary agent orchestration framework — Velox reads existing chart data through FHIR R4, scores against current clinical guidelines, and surfaces the signal in plain language. No probabilistic AI. No black boxes. Every output traceable to a named guideline step.
+        Powered by <strong style="color:var(--amber); font-weight:600;">Arcos</strong> — ProLytix's proprietary agent orchestration framework — Velox reads existing chart data through FHIR R4, scores against current clinical guidelines, and surfaces the signal in plain language for the care team to review. No probabilistic AI. No black boxes. Every output traceable to a named guideline step.
       </p>
     </div>
     <div>
@@ -182,9 +181,9 @@
         <strong>Example Scoring Trace — MASLD Pathway (AGA 2026)</strong>
         Patient: 58F · BMI 32.4 · ALT 67 · AST 44 · PLT 188<br><br>
         Step 1: FIB-4 calculable from existing labs → FIB-4 = 1.48<br>
-        Step 2: FIB-4 ≥ 1.3 → Indeterminate zone. AGA guideline requires confirmatory elastography.<br>
+        Step 2: FIB-4 ≥ 1.3 → Indeterminate zone. AGA guideline recommends confirmatory elastography.<br>
         Step 3: Elastography not on file → <span style="color:#E8A030;">Missing order flagged.</span><br>
-        Step 4: Guideline recommendation: Refer to Hepatology with elastography result in hand.<br><br>
+        Step 4: Guideline recommendation surfaced for clinician review: consider referral to Hepatology with elastography result in hand.<br><br>
         <span style="color:rgba(232,160,48,.6); font-size:11px;">Priority: High · Missing orders: 1 · Confidence: Guideline-match</span>
       </div>
     </div>
@@ -218,7 +217,7 @@
       <div class="usecase-number">01</div>
       <div class="usecase-title">Specialist MA — Incoming Referral Triage</div>
       <p class="usecase-body">
-        Velox reads the incoming referral packet from the EHR, scores the patient against the specialist's guideline, assigns scheduling priority, and surfaces every missing order — before the physician ever opens the chart. The MA knows who to call today.
+        Velox reads the incoming referral packet from the EHR, scores the patient against the specialist's guideline, suggests a scheduling priority, and surfaces every missing order — before the physician ever opens the chart. The MA knows who to call today.
       </p>
     </div>
 
@@ -226,7 +225,7 @@
       <div class="usecase-number">02</div>
       <div class="usecase-title">PCP Pre-Referral — Before Writing the Order</div>
       <p class="usecase-body">
-        Before the PCP writes the referral, Velox shows exactly what the specialist will need. If FIB-4 can be calculated from existing labs, it is. Orders placed today. Not after a wasted specialist visit that costs the patient six weeks and the health system a prior auth fight.
+        Before the PCP writes the referral, Velox shows exactly what the specialist will likely need. If FIB-4 can be calculated from existing labs, it is. Orders placed today. Not after a wasted specialist visit that costs the patient six weeks and the health system a prior auth fight.
       </p>
     </div>
 
@@ -242,7 +241,7 @@
       <div class="usecase-number">04</div>
       <div class="usecase-title">PCP Managing — When No Referral Is Needed</div>
       <p class="usecase-body">
-        Low-risk patient. Guideline endorses primary care management. Velox delivers a specific plan: what to prescribe, when to recheck, what labs to order, and exactly what number would change the answer to "refer now" — giving the PCP confidence to hold the case appropriately.
+        Low-risk patient. Guideline supports primary care management. Velox surfaces a specific plan for the physician to consider: what to prescribe, when to recheck, what labs to order, and exactly what number would change the calculus toward referral.
       </p>
     </div>
 
@@ -272,7 +271,7 @@
     <tbody>
       <tr class="iq-row-live">
         <td>PathwayIQ</td>
-        <td>Clinical pathway evaluation + validation against current guidelines. Scores patient, identifies gaps, explains reasoning step by step.</td>
+        <td>Clinical pathway evaluation against current guidelines. Scores the patient, identifies gaps, and explains the reasoning step by step for the clinician to review.</td>
         <td>Specialist MA, PCP</td>
         <td><span class="iq-badge badge-live">Live in Velox</span></td>
       </tr>
@@ -302,15 +301,9 @@
       </tr>
       <tr>
         <td>NoteIQ</td>
-        <td>Note intelligence layer. Reads completed notes after transcription — downstream of DAX, Freed, Deepgram, or any existing scribe tool.</td>
+        <td>Note intelligence layer. Reads completed notes after transcription — downstream of whatever scribe or transcription tool the practice already uses.</td>
         <td>Physicians</td>
         <td><span class="iq-badge badge-future">Future</span></td>
-      </tr>
-      <tr>
-        <td>PlanIQ</td>
-        <td>IEP management for special education. Same on-premise architecture, entirely different vertical.</td>
-        <td>Special ed coordinators</td>
-        <td><span class="iq-badge badge-future">Education Shell</span></td>
       </tr>
     </tbody>
   </table>
@@ -326,7 +319,7 @@
     <div>
       <h2 class="section-headline">No cloud.<br>No PHI in transit.<br><em>No exceptions.</em></h2>
       <p class="section-body">
-        Velox runs on a dedicated Rocky Linux edge device installed inside your facility. The device connects to your Epic instance via FHIR R4, reads what it needs, runs the scoring logic locally, and returns the result — all without a single byte of protected health information leaving the building.
+        Velox runs on a dedicated on-premise edge device installed inside your facility. The device connects to your EHR via FHIR R4, reads what it needs, runs the scoring logic locally, and returns the result — all without a single byte of protected health information leaving the building.
       </p>
       <p class="section-body" style="margin-top:16px;">
         Full function with no internet required. HIPAA-safe by architecture, not by policy.
@@ -337,8 +330,8 @@
       <div class="arch-panel">
         <div class="arch-panel-title">Technical Specs</div>
         <ul class="arch-list">
-          <li>Rocky Linux on-premise edge device</li>
-          <li>FHIR R4 — Epic App Orchard or local IT registration</li>
+          <li>On-premise edge device</li>
+          <li>FHIR R4 — compatible with major EHR platforms</li>
           <li>No cloud dependency · No internet required for core function</li>
           <li>Powered by Arcos — a proprietary agent orchestration framework purpose-built for deterministic clinical logic</li>
           <li>Clinic-configurable via Preferences UI</li>
@@ -348,11 +341,11 @@
       <div class="arch-panel">
         <div class="arch-panel-title">Differentiators</div>
         <ul class="arch-list">
-          <li>The trace — every decision in plain language, every step named</li>
+          <li>The trace — every score in plain language, every step named</li>
           <li>Deterministic, not probabilistic — no black-box AI outputs</li>
-          <li>Epic-compatible from day one (FHIR R4)</li>
+          <li>EHR-compatible from day one (FHIR R4)</li>
           <li>21st Century Cures Act CDS exemption — no FDA clearance path required</li>
-          <li>Not a scribe, not a transcription tool — intelligence downstream of those layers</li>
+          <li>A licensed clinician reviews and makes the final call — Velox informs, it does not decide</li>
         </ul>
       </div>
     </div>
@@ -403,8 +396,8 @@
       <div class="arch-panel">
         <div class="arch-panel-title">Alpha Site Profile</div>
         <ul class="arch-list">
-          <li>Community hospital and specialist practice settings · Louisiana</li>
-          <li>Epic EHR environments (FHIR R4)</li>
+          <li>Community hospital and specialist practice settings</li>
+          <li>EHR environments supporting FHIR R4</li>
           <li>Alpha partnerships currently being established</li>
           <li>Pulmonology and Hepatology as primary clinical domains</li>
         </ul>

@@ -121,6 +121,42 @@ a { color: inherit; text-decoration: none; }
 
 .nav-cta:hover { background: var(--amber-lt) !important; color: var(--ink) !important; }
 
+/* ── NAV DROPDOWN (Solutions) ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 18px;
+  background: rgba(15,26,20,.98);
+  border: 1px solid rgba(232,160,48,.18);
+  border-radius: 2px;
+  list-style: none;
+  min-width: 190px;
+  padding: 8px 0;
+  box-shadow: 0 16px 32px rgba(0,0,0,.35);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu li a:hover { background: rgba(232,160,48,.08); }
+
 /* hamburger */
 .nav-hamburger {
   display: none;
@@ -157,6 +193,8 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid rgba(232,160,48,.15);
   flex-direction: column;
   gap: 0;
+  max-height: calc(100vh - var(--nav-h));
+  overflow-y: auto;
 }
 
 .nav-drawer.open { display: flex; }
@@ -259,7 +297,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 16px;
   line-height: 1.72;
   color: rgba(242,237,228,.62);
-  max-width: 420px;
+  max-width: 440px;
   margin-bottom: 44px;
   font-weight: 300;
 }
@@ -481,7 +519,7 @@ a { color: inherit; text-decoration: none; }
   color: rgba(242,237,228,.55);
 }
 
-/* ── PRODUCT CARD ── */
+/* ── PRODUCT / SOLUTION CARD ── */
 .product-card {
   background: var(--ink);
   border: 1px solid rgba(232,160,48,.18);
@@ -492,6 +530,7 @@ a { color: inherit; text-decoration: none; }
   transition: border-color .25s, transform .2s;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
 .product-card:hover {
@@ -542,6 +581,32 @@ a { color: inherit; text-decoration: none; }
 
 .product-card:hover .product-card-link::after {
   transform: translateX(4px);
+}
+
+/* status pill used on solution/product cards */
+.status-pill {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: 'Syne', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.status-live { background: rgba(26,107,90,.4); color: #6ADFC0; border: 1px solid rgba(106,223,192,.3); }
+.status-soon { background: rgba(232,160,48,.12); color: var(--amber); border: 1px solid rgba(232,160,48,.25); }
+.status-service { background: rgba(122,62,142,.28); color: #D9A9EE; border: 1px solid rgba(217,169,238,.3); }
+
+/* ── SOLUTIONS GRID (index) ── */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  margin-top: 48px;
 }
 
 /* ── MODULE PILL ── */
@@ -679,7 +744,7 @@ footer {
   letter-spacing: .04em;
 }
 
-/* ── VELOX-SPECIFIC ── */
+/* ── VELOX / VERTICAL HERO (reused across product deep-dive pages) ── */
 .velox-hero {
   min-height: calc(100vh - var(--nav-h));
   background: var(--ink);
@@ -760,7 +825,7 @@ footer {
   margin-bottom: 48px;
 }
 
-/* ── USE CASE SECTION ── */
+/* ── USE CASE / STEP SECTION ── */
 .usecase-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -800,7 +865,7 @@ footer {
   font-weight: 300;
 }
 
-/* ── IQ MODULE TABLE ── */
+/* ── IQ / MODULE TABLE ── */
 .iq-table {
   width: 100%;
   border-collapse: collapse;
@@ -942,6 +1007,57 @@ footer {
 
 .form-textarea { resize: vertical; min-height: 120px; }
 
+/* ── CAREERS: ROLE CARD ── */
+.role-card {
+  background: rgba(232,160,48,.04);
+  border: 1px solid rgba(232,160,48,.14);
+  padding: 44px;
+  margin-top: 24px;
+}
+
+.role-card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: #F2EDE4;
+  margin-bottom: 6px;
+}
+
+.role-card-meta {
+  font-family: 'Syne', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.role-card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.role-card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(242,237,228,.6);
+  font-weight: 300;
+}
+
+.role-card-list li::before {
+  content: '◆';
+  color: var(--amber);
+  font-size: 7px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   :root { --nav-h: 60px; }
@@ -981,6 +1097,8 @@ footer {
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 
   .iq-table { display: block; overflow-x: auto; }
+
+  .role-card { padding: 28px; }
 }
 
 @media (max-width: 600px) {

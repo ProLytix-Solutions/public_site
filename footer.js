@@ -1,31 +1,8 @@
 // ── ProLytix Solutions — Shared Footer ──
 // Include in each page with: <script src="footer.js"></script>
-// Place just before </body>. The footer column links adjust per page.
+// Place just before </body>.
 
 (function () {
-  const page = window.location.pathname.split('/').pop() || 'index.html';
-  const onVelox = page === 'velox.html';
-
-  const platformCol = onVelox ? `
-    <div>
-      <div class="footer-col-title">Velox</div>
-      <ul class="footer-links">
-        <li><a href="#use-cases">Four Use Cases</a></li>
-        <li><a href="#iq-suite">IQ Suite Modules</a></li>
-        <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#alpha">Alpha Program</a></li>
-      </ul>
-    </div>` : `
-    <div>
-      <div class="footer-col-title">Platform</div>
-      <ul class="footer-links">
-        <li><a href="velox.html">Velox</a></li>
-        <li><a href="#platform">IQ Suite</a></li>
-        <li><a href="#platform">Architecture</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </div>`;
-
   const footer = `
 <footer>
   <div class="footer-inner">
@@ -40,15 +17,24 @@
         </svg>
       </div>
       <div class="footer-brand-name">ProLytix Solutions</div>
-      <p class="footer-brand-tagline">Clinical intelligence software for the moments that matter most. On-premise, Epic-compatible, guideline-driven.</p>
+      <p class="footer-brand-tagline">Guideline-driven intelligence software for healthcare, government, and education. On-premise. Traceable. Human-reviewed, always.</p>
     </div>
 
-    ${platformCol}
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <ul class="footer-links">
+        <li><a href="healthcare.html">Healthcare</a></li>
+        <li><a href="government.html">Government</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="custom-solutions.html">Custom Solutions</a></li>
+      </ul>
+    </div>
 
     <div>
-      <div class="footer-col-title">Contact</div>
+      <div class="footer-col-title">Company</div>
       <ul class="footer-links">
-        <li><a href="index.html#contact">Request Demo</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
         <li><a href="mailto:chris@prolytixsolutions.com">chris@prolytixsolutions.com</a></li>
         <li><a href="https://github.com/ProLytix-Solutions" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
@@ -56,7 +42,7 @@
   </div>
 
   <div class="footer-bottom">
-    <span class="footer-copy">© 2026 ProLytix Solutions LLC · Louisiana · All rights reserved</span>
+    <span class="footer-copy">© 2026 ProLytix Solutions LLC · All rights reserved</span>
     <span class="footer-copy">prolytixsolutions.com</span>
   </div>
 </footer>`;
