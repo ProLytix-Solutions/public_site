@@ -917,10 +917,11 @@ footer {
 
 /* ── ARCH PANEL ── */
 .arch-panel {
-  background: rgba(11,61,46,.3);
-  border: 1px solid rgba(232,160,48,.15);
+  background: var(--forest);
+  border: 1px solid rgba(232,160,48,.25);
   padding: 40px;
   border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(11,61,46,.18);
 }
 
 .arch-panel-title {
@@ -1106,4 +1107,167 @@ footer {
   .section-headline { font-size: 26px; }
   .stat-number { font-size: 38px; }
   .velox-hero-title { font-size: 38px; }
+}
+
+/* ── PILLARS (four-principle strip, used on Home) ── */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.pillar {
+  background: rgba(232,160,48,.05);
+  border: 1px solid rgba(232,160,48,.12);
+  padding: 32px 28px;
+}
+
+.pillar-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 13px;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+
+.pillar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #F2EDE4;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.pillar-body {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(242,237,228,.55);
+  font-weight: 300;
+}
+
+/* ── PAIN QUESTIONS (short hook list) ── */
+.pain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.pain-item {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(232,160,48,.1);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.9vw, 21px);
+  line-height: 1.4;
+  color: #F2EDE4;
+}
+
+.pain-item:first-child { padding-top: 0; }
+
+/* ── TAB BAR (used on the single-scroll alternate landing page) ── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(11,61,46,.18);
+  margin-top: 40px;
+}
+
+.tab-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: none;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+
+.tab-btn:hover { color: var(--ink); }
+
+.tab-btn.active {
+  color: var(--forest);
+  border-bottom-color: var(--forest);
+}
+
+/* On dark section backgrounds, flip the palette so tabs stay legible */
+.section-dark .tab-btn,
+.section-forest .tab-btn {
+  color: rgba(242,237,228,.5);
+}
+
+.section-dark .tab-btn:hover,
+.section-forest .tab-btn:hover {
+  color: rgba(242,237,228,.85);
+}
+
+.section-dark .tab-btn.active,
+.section-forest .tab-btn.active {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+.section-dark .tab-bar,
+.section-forest .tab-bar {
+  border-bottom: 1px solid rgba(232,160,48,.18);
+}
+
+.tab-panels {
+  position: relative;
+  margin-top: 8px;
+}
+
+.tab-panel {
+  display: none;
+  animation: tabIn .35s ease;
+}
+
+.tab-panel.active { display: block; }
+
+@keyframes tabIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ── SUB-NAV (sticky pill nav for one-page layout) ── */
+.subnav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 500;
+  background: rgba(15,26,20,.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(232,160,48,.15);
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 24px;
+  flex-wrap: wrap;
+}
+
+.subnav a {
+  font-family: 'Syne', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(242,237,228,.55);
+  padding: 8px 18px;
+  border-radius: 100px;
+  transition: color .2s, background .2s;
+}
+
+.subnav a:hover { color: #F2EDE4; }
+.subnav a.active { color: var(--ink); background: var(--amber); }
+
+@media (max-width: 700px) {
+  .tab-bar { overflow-x: auto; flex-wrap: nowrap; }
+  .subnav { justify-content: flex-start; overflow-x: auto; }
 }

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ProLytix Solutions: Enterprise-grade logic, without the enterprise. Deterministic, traceable technology for healthcare, government, and education.">
-  <title>ProLytix Solutions: Enterprise-Grade Logic. Without the Enterprise.</title>
+  <meta name="description" content="ProLytix Solutions: Enterprise-grade logic, without the enterprise. Deterministic, traceable technology for healthcare, government, and education. One-page version.">
+  <title>ProLytix Solutions: Enterprise-Grade Logic. Without the Enterprise. (One-Page)</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B3D2E'/%3E%3Cline x1='16' y1='3' x2='16' y2='29' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='3' y1='16' x2='29' y2='16' stroke='%23E8A030' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='5' stroke='%23E8A030' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23E8A030'/%3E%3C/svg%3E">
-  <meta name="google-site-verification" content="PASTE_YOUR_VERIFICATION_CODE_HERE">
+  <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-body">
 
@@ -50,7 +50,13 @@
   </div>
 </section>
 
-<div class="amber-rule"></div>
+<!-- Sticky in-page sub-nav: jumps within this single page -->
+<div class="subnav" id="subnav">
+  <a href="#solutions" data-target="solutions" class="active">Solutions</a>
+  <a href="#careers" data-target="careers">Careers</a>
+  <a href="#team" data-target="team">Team</a>
+  <a href="#contact" data-target="contact">Contact</a>
+</div>
 
 
 <!-- ════════════════════════════════════════ -->
@@ -86,64 +92,81 @@
 
 
 <!-- ════════════════════════════════════════ -->
-<!-- SOLUTIONS -->
+<!-- SOLUTIONS: TABBED REVEAL -->
 <!-- ════════════════════════════════════════ -->
 <section class="section section-pale" id="solutions">
   <div class="section-label">Solutions</div>
   <h2 class="section-headline">Three fields.<br><em>One engine.</em></h2>
-  <p class="section-body">Every solution below runs on Arcos, our proprietary orchestration framework built for AI integration at the ground level.</p>
+  <p class="section-body">Every solution below runs on Arcos, our proprietary orchestration framework built for AI integration at the ground level. Pick a field to see how it applies.</p>
 
-  <div class="solutions-grid">
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" data-tab="tab-healthcare" role="tab" aria-selected="true">Healthcare</button>
+    <button class="tab-btn" data-tab="tab-government" role="tab" aria-selected="false">Government</button>
+    <button class="tab-btn" data-tab="tab-education" role="tab" aria-selected="false">Education</button>
+  </div>
 
-    <a href="healthcare.html" class="product-card">
-      <span class="status-pill status-live">Live</span>
-      <div class="product-card-eyebrow">Healthcare</div>
-      <div style="margin:4px 0 8px;">
-        <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
-          <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#0B3D2E"/>
-          <polyline points="20,40 27,40 31,24 36,56 41,30 46,40 60,40" stroke="#E8A030" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
+  <div class="tab-panels">
+
+    <div class="tab-panel active" id="tab-healthcare">
+      <div class="two-col-narrow" style="margin-top:32px;">
+        <div>
+          <span class="status-pill status-live" style="position:static; display:inline-block; margin-bottom:16px;">Live</span>
+          <h3 class="card-title" style="font-size:26px;">Reduce time to first treatment.</h3>
+          <p class="section-body">Guideline-driven risk stratification gives you actionable data for every visit, including the first. Velox screens referrals and checks for missing orders. Navigator gives the nurse navigator only the actions that need taking, no sorting required. Every pathway is tunable to physician preference.</p>
+        </div>
+        <div class="arch-panel">
+          <div class="arch-panel-title">Fits Your Operation</div>
+          <ul class="arch-list">
+            <li>REST APIs, maps into any EHR</li>
+            <li>Dark-site capable, deployable as a virtual machine</li>
+            <li>Every score traces to a named guideline</li>
+          </ul>
+        </div>
       </div>
-      <div class="product-card-title">Healthcare</div>
-      <p class="product-card-body">Reduce time to first treatment. Know which patients on today's census actually need work before you open a single chart.</p>
-      <div class="product-card-link">Explore Healthcare</div>
-    </a>
+      <a href="healthcare.html" class="product-card-link" style="margin-top:28px; display:inline-flex;">Full Healthcare Page</a>
+    </div>
 
-    <a href="government.html" class="product-card">
-      <span class="status-pill status-soon">In Development</span>
-      <div class="product-card-eyebrow">Government</div>
-      <div style="margin:4px 0 8px;">
-        <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
-          <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#2E5A9E"/>
-          <rect x="26" y="26" width="28" height="24" rx="1.5" stroke="#E8A030" stroke-width="2.5" fill="none"/>
-          <line x1="31" y1="34" x2="49" y2="34" stroke="#E8A030" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="31" y1="40" x2="49" y2="40" stroke="#E8A030" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
+    <div class="tab-panel" id="tab-government">
+      <div class="two-col-narrow" style="margin-top:32px;">
+        <div>
+          <span class="status-pill status-soon" style="position:static; display:inline-block; margin-bottom:16px;">In Development</span>
+          <h3 class="card-title" style="font-size:26px;">Tax law changes faster than clinical guidelines.</h3>
+          <p class="section-body">We convert tax documents and rate tables directly into deterministic calculators. On-site AI maps the data year over year, so you can see the trend, not just the current rate. No cloud exposure, you own the full data stream.</p>
+        </div>
+        <div class="arch-panel">
+          <div class="arch-panel-title">Fits Your Operation</div>
+          <ul class="arch-list">
+            <li>Built directly from your existing documents and tables</li>
+            <li>Traceable to the specific rule behind every figure</li>
+            <li>A revenue officer reviews and finalizes every result</li>
+          </ul>
+        </div>
       </div>
-      <div class="product-card-title">Government</div>
-      <p class="product-card-body">Tax and license rules change constantly. We turn your documents and tables into deterministic calculators, on-site.</p>
-      <div class="product-card-link">Explore Government</div>
-    </a>
+      <a href="government.html" class="product-card-link" style="margin-top:28px; display:inline-flex;">Full Government Page</a>
+    </div>
 
-    <a href="education.html" class="product-card">
-      <span class="status-pill status-soon">In Development</span>
-      <div class="product-card-eyebrow">Education</div>
-      <div style="margin:4px 0 8px;">
-        <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
-          <polygon points="40,4 68,20 68,56 40,72 12,56 12,20" fill="#1C2B3A"/>
-          <rect x="26" y="22" width="24" height="30" rx="2" stroke="#E8A030" stroke-width="2.5" fill="none"/>
-          <line x1="31" y1="30" x2="45" y2="30" stroke="#E8A030" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="31" y1="36" x2="45" y2="36" stroke="#E8A030" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
+    <div class="tab-panel" id="tab-education">
+      <div class="two-col-narrow" style="margin-top:32px;">
+        <div>
+          <span class="status-pill status-soon" style="position:static; display:inline-block; margin-bottom:16px;">In Development</span>
+          <h3 class="card-title" style="font-size:26px;">A missed form shouldn't mean a missed service.</h3>
+          <p class="section-body">We help special education staff develop and manage IEP implementation. Just like a prior authorization check, it flags missing documentation that might indicate a child is missing out on help they need.</p>
+        </div>
+        <div class="arch-panel">
+          <div class="arch-panel-title">Fits Your Operation</div>
+          <ul class="arch-list">
+            <li>Tracks every IEP against its required timeline</li>
+            <li>Deployable on district infrastructure, no cloud subscription</li>
+            <li>Coordinators review and act on every flag</li>
+          </ul>
+        </div>
       </div>
-      <div class="product-card-title">Education</div>
-      <p class="product-card-body">IEP management that flags missing documentation before a child misses out on help they're entitled to.</p>
-      <div class="product-card-link">Explore Education</div>
-    </a>
+      <a href="education.html" class="product-card-link" style="margin-top:28px; display:inline-flex;">Full Education Page</a>
+    </div>
 
   </div>
 
-  <div style="margin-top:40px; padding:32px 36px; background:var(--ink); border:1px solid rgba(232,160,48,.18);">
+  <div style="margin-top:48px; padding:32px 36px; background:var(--ink); border:1px solid rgba(232,160,48,.18);">
     <p style="font-size:14px; line-height:1.7; color:rgba(242,237,228,.65); font-weight:300; max-width:640px;">
       Have a workflow problem that doesn't fit a category above? We offer workflow audits and consultations. We review how your team actually works, understand the barriers, and design a solution around it. <a href="#contact" style="color:var(--amber); text-decoration:underline;">Start that conversation.</a>
     </p>
@@ -152,21 +175,31 @@
 
 
 <!-- ════════════════════════════════════════ -->
-<!-- CAREERS TEASER -->
+<!-- CAREERS -->
 <!-- ════════════════════════════════════════ -->
-<div class="cta-band">
-  <div>
-    <div class="cta-band-text">We're hiring.</div>
-    <p style="font-size:14px; color:rgba(15,26,20,.65); margin-top:8px; font-weight:300;">A programmer and a business development lead. Small team, real ownership.</p>
+<section class="section section-dark" id="careers">
+  <div class="section-label">Careers</div>
+  <h2 class="section-headline">We're hiring.<br><em>Small team, real ownership.</em></h2>
+  <p class="section-body">A programmer and a business development lead. Both roles report directly into the founders.</p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:2px; margin-top:40px;">
+    <div class="card">
+      <div class="card-title">Software Engineer / Programmer</div>
+      <p class="card-body">Deterministic, guideline-driven systems across our product lines. Get the logic right, every time.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Business Development</div>
+      <p class="card-body">Build and manage the pipeline across our verticals, from first conversation to signed agreement.</p>
+    </div>
   </div>
-  <a href="careers.html" class="btn-dark">View Open Roles</a>
-</div>
+  <a href="careers.html" class="btn-ghost" style="margin-top:32px; display:inline-block;">Full role descriptions →</a>
+</section>
 
 
 <!-- ════════════════════════════════════════ -->
 <!-- TEAM -->
 <!-- ════════════════════════════════════════ -->
-<section class="section section-dark" id="team">
+<section class="section section-forest" id="team">
   <div class="section-label">Leadership</div>
   <h2 class="section-headline">Built by people who<br><em>ran the operation, and wrote the code.</em></h2>
   <p class="section-body">
@@ -206,7 +239,7 @@
 <!-- ════════════════════════════════════════ -->
 <!-- CONTACT -->
 <!-- ════════════════════════════════════════ -->
-<section class="section section-forest" id="contact">
+<section class="section section-dark" id="contact">
   <div class="two-col">
     <div>
       <div class="section-label">Contact</div>
@@ -259,6 +292,49 @@
 
 
 <script src="footer.js"></script>
+
+<!-- ════════════════════════════════════════ -->
+<!-- TAB + SUBNAV BEHAVIOR -->
+<!-- ════════════════════════════════════════ -->
+<script>
+  (function () {
+    // Tab switching within the Solutions section
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.tab-panel').forEach(function (p) {
+          p.classList.remove('active');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Scrollspy for the sticky sub-nav
+    const sections = ['solutions', 'careers', 'team', 'contact']
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
+    const subnavLinks = document.querySelectorAll('#subnav a');
+
+    function onScroll() {
+      let current = sections[0];
+      const offset = 140;
+      sections.forEach(function (sec) {
+        if (window.scrollY + offset >= sec.offsetTop) current = sec;
+      });
+      subnavLinks.forEach(function (link) {
+        link.classList.toggle('active', link.dataset.target === current.id);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 
 </body>
 </html>

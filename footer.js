@@ -1,6 +1,5 @@
-// ── ProLytix Solutions — Shared Footer ──
+// == ProLytix Solutions: Shared Footer (lean site) ==
 // Include in each page with: <script src="footer.js"></script>
-// Place just before </body>.
 
 (function () {
   const footer = `
@@ -17,7 +16,7 @@
         </svg>
       </div>
       <div class="footer-brand-name">ProLytix Solutions</div>
-      <p class="footer-brand-tagline">Guideline-driven intelligence software for healthcare, government, and education. On-premise. Traceable. Human-reviewed, always.</p>
+      <p class="footer-brand-tagline">Enterprise-grade logic. Without the enterprise. Deterministic, traceable technology for healthcare, government, and education.</p>
     </div>
 
     <div>
@@ -26,7 +25,6 @@
         <li><a href="healthcare.html">Healthcare</a></li>
         <li><a href="government.html">Government</a></li>
         <li><a href="education.html">Education</a></li>
-        <li><a href="custom-solutions.html">Custom Solutions</a></li>
       </ul>
     </div>
 
@@ -35,7 +33,7 @@
       <ul class="footer-links">
         <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#contact">Contact Us</a></li>
-        <li><a href="mailto:chris@prolytixsolutions.com">chris@prolytixsolutions.com</a></li>
+        <li><a href="mailto:salesmarketing@prolytixsolutions.com">salesmarketing@prolytixsolutions.com</a></li>
         <li><a href="https://github.com/ProLytix-Solutions" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </div>

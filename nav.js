@@ -1,11 +1,8 @@
-// ── ProLytix Solutions — Shared Navigation ──
+// == ProLytix Solutions: Shared Navigation (lean site) ==
 // Include in each page with: <script src="nav.js"></script>
-// The script detects the current page to set the active nav link.
 
 (function () {
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  const solutionPages = ['healthcare.html', 'velox.html', 'government.html', 'education.html', 'custom-solutions.html'];
-  const onSolutions = solutionPages.includes(page);
 
   const nav = `
 <nav class="nav">
@@ -31,15 +28,9 @@
 
   <ul class="nav-links">
     <li><a href="index.html" ${page === 'index.html' || page === '' ? 'class="active"' : ''}>Home</a></li>
-    <li class="nav-dropdown">
-      <a href="index.html#solutions" ${onSolutions ? 'class="active"' : ''}>Solutions ▾</a>
-      <ul class="nav-dropdown-menu">
-        <li><a href="healthcare.html">Healthcare</a></li>
-        <li><a href="government.html">Government</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="custom-solutions.html">Custom Solutions</a></li>
-      </ul>
-    </li>
+    <li><a href="healthcare.html" ${page === 'healthcare.html' ? 'class="active"' : ''}>Healthcare</a></li>
+    <li><a href="government.html" ${page === 'government.html' ? 'class="active"' : ''}>Government</a></li>
+    <li><a href="education.html" ${page === 'education.html' ? 'class="active"' : ''}>Education</a></li>
     <li><a href="careers.html" ${page === 'careers.html' ? 'class="active"' : ''}>Careers</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
   </ul>
@@ -52,18 +43,14 @@
 <div class="nav-drawer" id="drawer">
   <a href="index.html">Home</a>
   <a href="healthcare.html">Healthcare</a>
-  <a href="velox.html" style="padding-left:24px; font-size:12px;">— Velox</a>
   <a href="government.html">Government</a>
   <a href="education.html">Education</a>
-  <a href="custom-solutions.html">Custom Solutions</a>
   <a href="careers.html">Careers</a>
   <a href="index.html#contact" class="drawer-cta">Contact Us</a>
 </div>`;
 
-  // Write nav before the page body content
   document.currentScript.insertAdjacentHTML('afterend', nav);
 
-  // Wire up hamburger after DOM is ready
   document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
     const drawer = document.getElementById('drawer');
