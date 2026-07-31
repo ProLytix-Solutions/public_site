@@ -33,8 +33,6 @@
       <ul class="footer-links">
         <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#contact">Contact Us</a></li>
-        <li><a href="mailto:salesmarketing@prolytixsolutions.com">salesmarketing@prolytixsolutions.com</a></li>
-        <li><a href="https://github.com/ProLytix-Solutions" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </div>
   </div>
